@@ -1,0 +1,12 @@
+manifest.json
+memories.json
+review-report.json
+photos/*
+photos-inbox/*
+!photos/.gitkeep
+!photos-inbox/.gitkeep
+generated/*
+!generated/.gitkeep
+
+specs.md
+README.md

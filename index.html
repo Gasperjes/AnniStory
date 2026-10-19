@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="sl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7efe7" />
+    <title>Najina časovnica</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="welcome-screen" class="screen welcome-screen" aria-labelledby="welcome-title">
+        <div class="ornament" aria-hidden="true">✦</div>
+        <p class="eyebrow">Majhno potovanje skozi najino zgodbo</p>
+        <h1 id="welcome-title">Najina časovnica</h1>
+        <p id="welcome-subtitle" class="subtitle">Toliko trenutkov, ena čudovita zgodba.</p>
+        <button id="start-button" class="button button-primary" type="button">Začni najino časovnico</button>
+        <p class="privacy-note">Fotografije ostanejo na tej napravi.</p>
+      </section>
+
+      <section id="game-screen" class="screen game-screen" aria-labelledby="question" hidden>
+        <header class="game-header">
+          <div>
+            <p class="eyebrow">Najina zgodba, trenutek za trenutkom</p>
+            <h1 id="game-title">Najina časovnica</h1>
+          </div>
+          <div class="stats" aria-label="Statistika igre">
+            <span><strong id="score">0</strong><small>Točke</small></span>
+            <span><strong id="streak">0</strong><small>Niz</small></span>
+            <span><strong id="best-streak">0</strong><small>Najboljši niz</small></span>
+            <span class="lives-stat"><strong><span aria-hidden="true">♥</span> <span id="lives">3</span></strong><small>Življenja</small></span>
+          </div>
+        </header>
+        <div class="progress-wrap">
+          <div class="progress-label"><span>Napredek po časovnici</span><span id="progress-text">2 / 3 fotografij</span></div>
+          <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+        </div>
+        <div class="heart-meter">
+          <div class="heart-label"><span id="heart-label" class="visually-hidden">Napolni srček</span><strong id="heart-count">0 / 20</strong></div>
+          <div id="heart-meter" class="heart-track" role="progressbar" tabindex="0" aria-labelledby="heart-label" aria-describedby="heart-hint" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0"><div id="heart-fill" class="heart-fill"></div><span class="meter-heart" aria-hidden="true">♥</span></div>
+          <p id="heart-hint" class="heart-hint" role="tooltip">Napolni srček do 20! Pravilen odgovor +1 · napačen odgovor −2.</p>
+        </div>
+        <p id="question" class="question">Katera slika je mlajša?</p>
+        <p class="choice-hint">Klikni na mlajšo fotografijo ali izberi gumb spodaj.</p>
+        <div id="cards" class="cards" aria-live="polite"></div>
+        <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+        <div id="answer-buttons" class="answer-buttons">
+          <button class="button answer-button" data-answer="earlier" type="button">← Leva je mlajša</button>
+          <button class="button answer-button" data-answer="later" type="button">Desna je mlajša →</button>
+        </div>
+      </section>
+
+      <section id="end-screen" class="screen end-screen" aria-labelledby="end-title" hidden>
+        <div class="ornament" aria-hidden="true">♡</div>
+        <p id="end-kicker" class="eyebrow">Konec tega poglavja</p>
+        <h1 id="end-title">Kako lepa zgodba.</h1>
+        <p id="end-message" class="subtitle"></p>
+        <div class="final-stats"><span><strong id="final-score">0</strong> točke</span><span><strong id="final-best">0</strong> najdaljši niz</span></div>
+        <div id="memory-selection" class="memory-selection"></div>
+        <button id="play-again-button" class="button button-primary" type="button">Igraj znova</button>
+      </section>
+
+      <section id="error-screen" class="screen error-screen" aria-labelledby="error-title" hidden>
+        <div class="ornament" aria-hidden="true">♡</div>
+        <h1 id="error-title">Majhen zaplet</h1>
+        <p id="error-message" class="subtitle"></p>
+        <p class="privacy-note">Preveri podatke o spominih in poskusi znova.</p>
+      </section>
+    </main>
+    <div id="heart-celebration" class="heart-celebration" role="status" hidden><span class="celebration-heart" aria-hidden="true">♥</span><p>Srček je poln! ♥</p></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
